@@ -3,7 +3,7 @@
 //  Aureate
 //
 //  Created by Katherine Palevich on 9/20/21.
-//
+// test for github
 
 import Foundation
 import SwiftUI
