@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9D30E1826F8F6F600F48077 /* AureateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D30E1726F8F6F600F48077 /* AureateApp.swift */; };
+		C9D30E1A26F8F6F600F48077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D30E1926F8F6F600F48077 /* ContentView.swift */; };
+		C9D30E1C26F8F6F700F48077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D30E1B26F8F6F700F48077 /* Assets.xcassets */; };
+		C9D30E1F26F8F6F700F48077 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D30E1E26F8F6F700F48077 /* Preview Assets.xcassets */; };
+		C9D30E2126F8F6F700F48077 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D30E2026F8F6F700F48077 /* Persistence.swift */; };
+		C9D30E2426F8F6F700F48077 /* Aureate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9D30E2226F8F6F700F48077 /* Aureate.xcdatamodeld */; };
+		C9EC89FD26FA50DF00973ADD /* JournalEntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC89FC26FA50DF00973ADD /* JournalEntriesView.swift */; };
+		C9EC89FF26FA50EF00973ADD /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC89FE26FA50EF00973ADD /* PlannerView.swift */; };
+		C9EC8A0226FA511100973ADD /* HabitTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC8A0126FA511100973ADD /* HabitTrackerView.swift */; };
+		C9EC8A0426FA512000973ADD /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC8A0326FA512000973ADD /* ToDoView.swift */; };
+		C9EC8A0626FA512D00973ADD /* DreamTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC8A0526FA512D00973ADD /* DreamTrackerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C9D30E1426F8F6F600F48077 /* Aureate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aureate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D30E1726F8F6F600F48077 /* AureateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AureateApp.swift; sourceTree = "<group>"; };
+		C9D30E1926F8F6F600F48077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C9D30E1B26F8F6F700F48077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9D30E1E26F8F6F700F48077 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9D30E2026F8F6F700F48077 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C9D30E2326F8F6F700F48077 /* Aureate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aureate.xcdatamodel; sourceTree = "<group>"; };
+		C9D30E2526F8F6F700F48077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9EC89FC26FA50DF00973ADD /* JournalEntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntriesView.swift; sourceTree = "<group>"; };
+		C9EC89FE26FA50EF00973ADD /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
+		C9EC8A0126FA511100973ADD /* HabitTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerView.swift; sourceTree = "<group>"; };
+		C9EC8A0326FA512000973ADD /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
+		C9EC8A0526FA512D00973ADD /* DreamTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamTrackerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9D30E1126F8F6F600F48077 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9D30E0B26F8F6F600F48077 = {
+			isa = PBXGroup;
+			children = (
+				C9D30E1626F8F6F600F48077 /* Aureate */,
+				C9D30E1526F8F6F600F48077 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9D30E1526F8F6F600F48077 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9D30E1426F8F6F600F48077 /* Aureate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9D30E1626F8F6F600F48077 /* Aureate */ = {
+			isa = PBXGroup;
+			children = (
+				C9D30E1726F8F6F600F48077 /* AureateApp.swift */,
+				C9EC8A0026FA50F400973ADD /* Views */,
+				C9D30E1B26F8F6F700F48077 /* Assets.xcassets */,
+				C9D30E2026F8F6F700F48077 /* Persistence.swift */,
+				C9D30E2526F8F6F700F48077 /* Info.plist */,
+				C9D30E2226F8F6F700F48077 /* Aureate.xcdatamodeld */,
+				C9D30E1D26F8F6F700F48077 /* Preview Content */,
+			);
+			path = Aureate;
+			sourceTree = "<group>";
+		};
+		C9D30E1D26F8F6F700F48077 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C9D30E1E26F8F6F700F48077 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9EC8A0026FA50F400973ADD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9D30E1926F8F6F600F48077 /* ContentView.swift */,
+				C9EC89FC26FA50DF00973ADD /* JournalEntriesView.swift */,
+				C9EC89FE26FA50EF00973ADD /* PlannerView.swift */,
+				C9EC8A0326FA512000973ADD /* ToDoView.swift */,
+				C9EC8A0126FA511100973ADD /* HabitTrackerView.swift */,
+				C9EC8A0526FA512D00973ADD /* DreamTrackerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9D30E1326F8F6F600F48077 /* Aureate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9D30E2826F8F6F700F48077 /* Build configuration list for PBXNativeTarget "Aureate" */;
+			buildPhases = (
+				C9D30E1026F8F6F600F48077 /* Sources */,
+				C9D30E1126F8F6F600F48077 /* Frameworks */,
+				C9D30E1226F8F6F600F48077 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aureate;
+			productName = Aureate;
+			productReference = C9D30E1426F8F6F600F48077 /* Aureate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9D30E0C26F8F6F600F48077 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					C9D30E1326F8F6F600F48077 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = C9D30E0F26F8F6F600F48077 /* Build configuration list for PBXProject "Aureate" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9D30E0B26F8F6F600F48077;
+			productRefGroup = C9D30E1526F8F6F600F48077 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9D30E1326F8F6F600F48077 /* Aureate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9D30E1226F8F6F600F48077 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9D30E1F26F8F6F700F48077 /* Preview Assets.xcassets in Resources */,
+				C9D30E1C26F8F6F700F48077 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9D30E1026F8F6F600F48077 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9EC8A0626FA512D00973ADD /* DreamTrackerView.swift in Sources */,
+				C9D30E2126F8F6F700F48077 /* Persistence.swift in Sources */,
+				C9D30E1A26F8F6F600F48077 /* ContentView.swift in Sources */,
+				C9EC8A0426FA512000973ADD /* ToDoView.swift in Sources */,
+				C9EC8A0226FA511100973ADD /* HabitTrackerView.swift in Sources */,
+				C9D30E1826F8F6F600F48077 /* AureateApp.swift in Sources */,
+				C9D30E2426F8F6F700F48077 /* Aureate.xcdatamodeld in Sources */,
+				C9EC89FD26FA50DF00973ADD /* JournalEntriesView.swift in Sources */,
+				C9EC89FF26FA50EF00973ADD /* PlannerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C9D30E2626F8F6F700F48077 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9D30E2726F8F6F700F48077 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9D30E2926F8F6F700F48077 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Aureate/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Aureate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.palevichchenindustries.Aureate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C9D30E2A26F8F6F700F48077 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Aureate/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Aureate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.palevichchenindustries.Aureate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9D30E0F26F8F6F600F48077 /* Build configuration list for PBXProject "Aureate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D30E2626F8F6F700F48077 /* Debug */,
+				C9D30E2726F8F6F700F48077 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9D30E2826F8F6F700F48077 /* Build configuration list for PBXNativeTarget "Aureate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D30E2926F8F6F700F48077 /* Debug */,
+				C9D30E2A26F8F6F700F48077 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9D30E2226F8F6F700F48077 /* Aureate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9D30E2326F8F6F700F48077 /* Aureate.xcdatamodel */,
+			);
+			currentVersion = C9D30E2326F8F6F700F48077 /* Aureate.xcdatamodel */;
+			path = Aureate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C9D30E0C26F8F6F600F48077 /* Project object */;
+}
