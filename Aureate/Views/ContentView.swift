@@ -3,7 +3,7 @@
 //  Aureate
 //
 //  Created by Katherine Palevich on 9/20/21.
-// test for github
+//
 
 import Foundation
 import SwiftUI
@@ -11,6 +11,7 @@ import CoreData
 
 struct ContentView: View {
     @State var showMenu = false
+    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         let drag = DragGesture()
@@ -71,7 +72,7 @@ struct MainView : View{
 struct MenuView: View {
     var body: some View {
         List{
-            NavigationLink(destination: JournalEntriesView()) {
+            NavigationLink(destination: EntryList()) {
                 Image(systemName: "text.book.closed")
                     .foregroundColor(.black)
                     .imageScale(.large)
