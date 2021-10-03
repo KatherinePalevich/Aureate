@@ -39,6 +39,7 @@ struct JournalEntryCreationSheet: View {
 
     private func save() {
         do {
+            entry.date = Date()
             try context.save()
             dismissAction()
         } catch {

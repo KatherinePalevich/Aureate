@@ -33,7 +33,7 @@ struct EntryList2: View {
     private var didSave = NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave)
     
     var body: some View {
-        ItemList3(fetchRequest:fetchRequest, sortOrder: $sortOrder)
+        EntryList3(fetchRequest:fetchRequest, sortOrder: $sortOrder)
             .onReceive(didSave) {_ in
                 // CoreData doesn't automatically fetchf when relations change.
                 if sortOrder == .byName {
@@ -54,7 +54,7 @@ struct EntryList2: View {
     }
 }
 
-struct ItemList3: View {
+struct EntryList3: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var fetchRequest:FetchRequest<Entry>
@@ -192,7 +192,7 @@ struct EntryRow: View {
     var body: some View {
         VStack(alignment:.leading) {
             Text(entry.wrappedName)
-            Text(entry.categoriesSortKey ?? "").font(.footnote).lineLimit(1)
+            Text("\(entry.wrappedDate)").font(.footnote).lineLimit(1)
         }
     }
 }
