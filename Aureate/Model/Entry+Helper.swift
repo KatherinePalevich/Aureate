@@ -31,4 +31,14 @@ extension Entry {
         }
     }
     
+    var wrappedText: String {
+        get {
+            text ?? ""
+        }
+        set(newValue) {
+            objectWillChange.send()
+            text = newValue
+        }
+    }
+    
 }

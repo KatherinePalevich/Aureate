@@ -10,51 +10,16 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @State var showMenu = false
-    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
-        let drag = DragGesture()
-            .onEnded{
-                if $0.translation.width < -100 {
-                    withAnimation {
-                        self.showMenu = false
-                    }
-                }
-            }
-        return NavigationView {
-            GeometryReader { geometry in
-                ZStack(alignment: .leading){
-                    MainView(showMenu: self.$showMenu)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                        .disabled(self.showMenu ? true : false)
-                    
-                    
-                    if self.showMenu {
-                        MenuView()
-                            .transition(.move(edge: .leading))
-                    }
-                }.gesture(drag)
-                
-            }.navigationBarItems(leading: (
-                Button(action: {
-                    withAnimation {
-                        self.showMenu.toggle()
-                        
-                    }
-                }) {
-                    Image(systemName: "line.horizontal.3")
-                        .foregroundColor(.black)
-                        .imageScale(.large)
-                }
-            ))
+        NavigationView {
+            MenuView()
+            WelcomeView()
         }
     }
 }
 
-struct MainView : View{
-    @Binding var showMenu: Bool
+struct WelcomeView : View{
     let date = Date()
     
     var body: some View {

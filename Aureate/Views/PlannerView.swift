@@ -6,10 +6,27 @@
 //
 
 import SwiftUI
+import EventKit
+import EventKitUI
 
 struct PlannerView: View {
+    @State private var date = Date()
+    var calendar = Calendar(date: Date())
+    
     var body: some View {
-        Text("This is the Planner Page")
+        
+        DatePicker(
+            "Start Date",
+            selection: $date,
+            displayedComponents: [.date]
+        )
+            .frame(maxWidth: .infinity)
+            .datePickerStyle(.graphical)
+        Text("\(date)")
+        Text("These are the day's events")
+//        calendar.events.forEach() { event in
+//            Text(event.title)
+//        }
     }
 }
 

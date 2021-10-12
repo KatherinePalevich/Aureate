@@ -65,7 +65,7 @@ struct EntryList3: View {
         fetchRequest.wrappedValue
     }
     
-    /// Controls the presentation of the item creation sheet.
+    /// Controls the presentation of the entry creation sheet.
     @State private var newEntryIsPresented = false
     
     var body: some View {
@@ -84,7 +84,6 @@ struct EntryList3: View {
             ForEach(entries) { entry in
                 NavigationLink(destination: editorView(for: entry)) {
                     EntryRow(entry: entry)
-                        .animation(nil)
                 }
             }
             .onDelete(perform: deleteEntries)
