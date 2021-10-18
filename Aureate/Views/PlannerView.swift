@@ -11,27 +11,31 @@ import EventKitUI
 
 struct PlannerView: View {
     @State private var date = Date()
-    var calendar = Calendar(date: Date())
+    @State private var events = [EKEvent]()
+    var calendar = Events(date: Date())
     
     var body: some View {
-        
         DatePicker(
             "Start Date",
             selection: $date,
             displayedComponents: [.date]
-        )
+        ).onChange(of: date, perform: { _ in
+            events = populateEvents(date: date, calendar: calendar)
+       })
             .frame(maxWidth: .infinity)
             .datePickerStyle(.graphical)
         Text("\(date)")
         Text("These are the day's events")
-//        calendar.events.forEach() { event in
-//            Text(event.title)
-//        }
+        VStack {
+            ForEach(events, id: \.self) { event in
+                Text(event.title)
+                Text("\(event.startDate)")
+            }
+        }
     }
 }
 
-struct PlannerView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlannerView()
-    }
+func populateEvents(date: Date, calendar: Events) -> [EKEvent]{
+    calendar.populateEvents(date: date)
+    return calendar.events
 }
