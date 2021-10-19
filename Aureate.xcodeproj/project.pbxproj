@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C9037B5B270233FC0002D4C1 /* JournalEntryCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9037B5A270233FC0002D4C1 /* JournalEntryCreationSheet.swift */; };
 		C951F5D227038844002B5848 /* Entry+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F5D127038844002B5848 /* Entry+Helper.swift */; };
+		C961B87E271DE34F0082C610 /* EventEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961B87D271DE34F0082C610 /* EventEditor.swift */; };
 		C968DC1B2707768E0069459D /* EntryEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968DC1A2707768E0069459D /* EntryEditor.swift */; };
 		C968DC1D270776E50069459D /* EntryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968DC1C270776E50069459D /* EntryForm.swift */; };
 		C968DC1F2708F3CB0069459D /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968DC1E2708F3CB0069459D /* EntryList.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		C9037B5A270233FC0002D4C1 /* JournalEntryCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCreationSheet.swift; sourceTree = "<group>"; };
 		C951F5D127038844002B5848 /* Entry+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+Helper.swift"; sourceTree = "<group>"; };
+		C961B87D271DE34F0082C610 /* EventEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditor.swift; sourceTree = "<group>"; };
 		C968DC1A2707768E0069459D /* EntryEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryEditor.swift; sourceTree = "<group>"; };
 		C968DC1C270776E50069459D /* EntryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryForm.swift; sourceTree = "<group>"; };
 		C968DC1E2708F3CB0069459D /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				C9EC8A0526FA512D00973ADD /* DreamTrackerView.swift */,
 				C968DC1A2707768E0069459D /* EntryEditor.swift */,
 				C968DC1C270776E50069459D /* EntryForm.swift */,
+				C961B87D271DE34F0082C610 /* EventEditor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				C951F5D227038844002B5848 /* Entry+Helper.swift in Sources */,
 				C9EC8A0426FA512000973ADD /* ToDoView.swift in Sources */,
 				C9EC8A0226FA511100973ADD /* HabitTrackerView.swift in Sources */,
+				C961B87E271DE34F0082C610 /* EventEditor.swift in Sources */,
 				C9D30E1826F8F6F600F48077 /* AureateApp.swift in Sources */,
 				C9D30E2426F8F6F700F48077 /* Aureate.xcdatamodeld in Sources */,
 				C968DC1F2708F3CB0069459D /* EntryList.swift in Sources */,
