@@ -7,18 +7,16 @@
 
 import SwiftUI
 import EventKit
+import EventKitUI
 
 struct EventEditor: View {
-    //Manages editing the event (?)
     var event: EKEvent
     
-    var body: some View {
-//        List {
-//            TextField("Title", text: event.title!)
-//            TextEditor(text: entry.startDate)
-//        }
-//        .listStyle(GroupedListStyle())
-        Text(event.title)
-        Text("\(event.startDate)")
-    }
+    @State private var showIt = false
+        var body: some View {
+            Button("Events") { showIt = true }
+                .sheet(isPresented: $showIt) {
+                    EventViewer(event: event, isShowing: $showIt)
+                }
+        }
 }

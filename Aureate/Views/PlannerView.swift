@@ -10,23 +10,18 @@ import EventKit
 import EventKitUI
 
 struct PlannerView: View {
-    @State private var date = Date()
-    @State private var events = [EKEvent]()
-    var calendar = Events(date: Date())
+    @ObservedObject var calendar = Events(date: Date())
     
     var body: some View {
         DatePicker(
             "Start Date",
-            selection: $date,
+            selection: $calendar.date,
             displayedComponents: [.date]
-        ).onChange(of: date, perform: { _ in
-            events = populateEvents(date: date, calendar: calendar)
-        })
+        )
             .frame(maxWidth: .infinity)
             .datePickerStyle(.graphical)
-        //Text("\(date)")
         List {
-            ForEach(events, id: \.self) { event in
+            ForEach(calendar.events, id: \.self) { event in
                 NavigationLink(destination: editorView(for: event)) {
                     EventRow(event: event)
                 }
@@ -39,11 +34,6 @@ struct PlannerView: View {
 private func editorView(for event: EKEvent) -> some View {
     EventEditor(event: event)
         .navigationBarTitle("Event")
-}
-
-func populateEvents(date: Date, calendar: Events) -> [EKEvent]{
-    calendar.populateEvents(date: date)
-    return calendar.events
 }
 
 struct EventRow: View {

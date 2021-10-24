@@ -39,6 +39,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string>To invite others to your calendar event.</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>To display and update your calendar for each event.</string>
 	<key>NSRemindersUsageDescription</key>
