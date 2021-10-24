@@ -11,6 +11,7 @@ import EventKitUI
 
 struct PlannerView: View {
     @ObservedObject var calendar = Events(date: Date())
+    @State private var selectedEvent : EKEvent?
     
     var body: some View {
         DatePicker(
@@ -22,10 +23,14 @@ struct PlannerView: View {
             .datePickerStyle(.graphical)
         List {
             ForEach(calendar.events, id: \.self) { event in
-                NavigationLink(destination: editorView(for: event)) {
-                    EventRow(event: event)
+                
+                EventRow(event: event).onTapGesture {
+                    selectedEvent = event
                 }
             }
+        }.sheet(item: $selectedEvent) { item in
+            EventViewer(event: item)
+
         }
     }
 }

@@ -12,14 +12,13 @@ import EventKitUI
 struct EventViewer: UIViewControllerRepresentable {
     typealias UIViewControllerType = EKEventEditViewController
 
-    @Binding var isShowing: Bool
+    @Environment(\.dismiss) var dismiss
     var theEvent: EKEvent
 
-    init(event: EKEvent, isShowing: Binding<Bool>) {
+    init(event: EKEvent) {
 
         theEvent = event
 
-        _isShowing = isShowing
     }
 
 
@@ -39,21 +38,21 @@ func updateUIViewController(_ uiViewController: EventViewer.UIViewControllerType
 
 
 func makeCoordinator() -> Coordinator {
-    return Coordinator(isShowing: $isShowing)
+    return Coordinator(dismiss: dismiss)
 }
 
 class Coordinator : NSObject, UINavigationControllerDelegate, EKEventEditViewDelegate {
 
-    @Binding var isVisible: Bool
+    var dismiss: DismissAction
 
-    init(isShowing: Binding<Bool>) {
-        _isVisible = isShowing
+    init(dismiss: DismissAction) {
+        self.dismiss = dismiss
     }
 
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         switch action {
         case .canceled:
-            isVisible = false
+            dismiss()
         case .saved:
             do {
                 try controller.eventStore.save(controller.event!, span: .thisEvent, commit: true)
@@ -61,11 +60,11 @@ class Coordinator : NSObject, UINavigationControllerDelegate, EKEventEditViewDel
             catch {
                 print("Event couldn't be created")
             }
-            isVisible = false
+            dismiss()
         case .deleted:
-            isVisible = false
+            dismiss()
         @unknown default:
-            isVisible = false
+            dismiss()
         }
     }
 }}

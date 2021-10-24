@@ -10,6 +10,7 @@
 		C9037B5B270233FC0002D4C1 /* JournalEntryCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9037B5A270233FC0002D4C1 /* JournalEntryCreationSheet.swift */; };
 		C951F5D227038844002B5848 /* Entry+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F5D127038844002B5848 /* Entry+Helper.swift */; };
 		C95EC8D42724C6C70031E28A /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95EC8D32724C6C70031E28A /* EventViewer.swift */; };
+		C95EC8D62724FD1E0031E28A /* EKEvent+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95EC8D52724FD1E0031E28A /* EKEvent+Identifiable.swift */; };
 		C961B87E271DE34F0082C610 /* EventEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961B87D271DE34F0082C610 /* EventEditor.swift */; };
 		C968DC1B2707768E0069459D /* EntryEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968DC1A2707768E0069459D /* EntryEditor.swift */; };
 		C968DC1D270776E50069459D /* EntryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968DC1C270776E50069459D /* EntryForm.swift */; };
@@ -31,6 +32,7 @@
 		C9037B5A270233FC0002D4C1 /* JournalEntryCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCreationSheet.swift; sourceTree = "<group>"; };
 		C951F5D127038844002B5848 /* Entry+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+Helper.swift"; sourceTree = "<group>"; };
 		C95EC8D32724C6C70031E28A /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
+		C95EC8D52724FD1E0031E28A /* EKEvent+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEvent+Identifiable.swift"; sourceTree = "<group>"; };
 		C961B87D271DE34F0082C610 /* EventEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditor.swift; sourceTree = "<group>"; };
 		C968DC1A2707768E0069459D /* EntryEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryEditor.swift; sourceTree = "<group>"; };
 		C968DC1C270776E50069459D /* EntryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryForm.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				C951F5D127038844002B5848 /* Entry+Helper.swift */,
 				C99C95912712838A00D60A5F /* Events.swift */,
+				C95EC8D52724FD1E0031E28A /* EKEvent+Identifiable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				C961B87E271DE34F0082C610 /* EventEditor.swift in Sources */,
 				C9D30E1826F8F6F600F48077 /* AureateApp.swift in Sources */,
 				C9D30E2426F8F6F700F48077 /* Aureate.xcdatamodeld in Sources */,
+				C95EC8D62724FD1E0031E28A /* EKEvent+Identifiable.swift in Sources */,
 				C968DC1F2708F3CB0069459D /* EntryList.swift in Sources */,
 				C9EC89FF26FA50EF00973ADD /* PlannerView.swift in Sources */,
 				C968DC1D270776E50069459D /* EntryForm.swift in Sources */,

@@ -16,7 +16,7 @@ struct EventEditor: View {
         var body: some View {
             Button("Events") { showIt = true }
                 .sheet(isPresented: $showIt) {
-                    EventViewer(event: event, isShowing: $showIt)
+                    EventViewer(event: event)
                 }
         }
 }
