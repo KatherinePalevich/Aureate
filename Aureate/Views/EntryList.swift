@@ -72,11 +72,11 @@ struct EntryList3: View {
         entryList
             .navigationBarTitle(Text("\(entries.count) Entries"))
             .navigationBarItems(
-                leading: HStack {
-                    EditButton()
+                leading: EditButton(),
+                trailing: HStack {
                     newEntryButton
-                },
-                trailing: toggleOrderingButton)
+                    toggleOrderingButton
+                })
     }
     
     private var entryList: some View {

@@ -118,14 +118,14 @@
 				C9D30E1926F8F6F600F48077 /* ContentView.swift */,
 				C968DC1E2708F3CB0069459D /* EntryList.swift */,
 				C9037B5A270233FC0002D4C1 /* JournalEntryCreationSheet.swift */,
+				C968DC1A2707768E0069459D /* EntryEditor.swift */,
+				C968DC1C270776E50069459D /* EntryForm.swift */,
 				C9EC89FE26FA50EF00973ADD /* PlannerView.swift */,
+				C961B87D271DE34F0082C610 /* EventEditor.swift */,
+				C95EC8D32724C6C70031E28A /* EventViewer.swift */,
 				C9EC8A0326FA512000973ADD /* ToDoView.swift */,
 				C9EC8A0126FA511100973ADD /* HabitTrackerView.swift */,
 				C9EC8A0526FA512D00973ADD /* DreamTrackerView.swift */,
-				C968DC1A2707768E0069459D /* EntryEditor.swift */,
-				C968DC1C270776E50069459D /* EntryForm.swift */,
-				C961B87D271DE34F0082C610 /* EventEditor.swift */,
-				C95EC8D32724C6C70031E28A /* EventViewer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
