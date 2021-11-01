@@ -22,18 +22,17 @@ struct PlannerView: View {
         )
             .frame(maxWidth: .infinity)
             .datePickerStyle(.graphical)
-        List {
-            ForEach(calendar.events, id: \.self) { event in
-                
-                EventRow(event: event).onTapGesture {
-                    selectedEvent = event
+        TabView {
+            DayView(calendarEvents: calendar.dayEvents)
+                .tabItem {
+                    Label("Day", systemImage: "circle")
                 }
-            }
-        }.sheet(item: $selectedEvent) { item in
-            EventViewer(event: item)
             
-        }
-        .navigationBarItems(
+            WeekView(calendarEvents: calendar.weekEvents)
+                .tabItem {
+                    Label("Week", systemImage: "circle.hexagongrid")
+                }
+        }.navigationBarItems(
             trailing: HStack {
                 newEntryButton
             }
@@ -82,6 +81,44 @@ struct EventRow: View {
         VStack(alignment:.leading) {
             Text(event.title)
             Text("\(event.startDate)")
+        }
+    }
+}
+
+struct DayView : View {
+    var calendarEvents : [EKEvent]
+    @State private var selectedEvent : EKEvent?
+    
+    var body: some View {
+        List {
+            ForEach(calendarEvents, id: \.self) { event in
+                
+                EventRow(event: event).onTapGesture {
+                    selectedEvent = event
+                }
+            }
+        }.sheet(item: $selectedEvent) { item in
+            EventViewer(event: item)
+            
+        }
+    }
+    
+}
+struct WeekView : View {
+    var calendarEvents : [EKEvent]
+    @State private var selectedEvent : EKEvent?
+    
+    var body: some View {
+        List {
+            ForEach(calendarEvents, id: \.self) { event in
+                
+                EventRow(event: event).onTapGesture {
+                    selectedEvent = event
+                }
+            }
+        }.sheet(item: $selectedEvent) { item in
+            EventViewer(event: item)
+            
         }
     }
 }

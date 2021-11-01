@@ -12,13 +12,15 @@ import Combine
 import SwiftUI
 
 class Events: ObservableObject {
-    @Published public var events : [EKEvent] = []
+    @Published public var dayEvents : [EKEvent] = []
+    @Published public var weekEvents : [EKEvent] = []
     private var cancellables = Set<AnyCancellable>()
     
     public static let eventStore = EKEventStore()
     @Published public var date : Date {
         didSet {
-            populateEvents(date: date)
+            populateDayEvents(date: date)
+            populateWeekEvents(date: date)
         }
     }
 
@@ -28,17 +30,19 @@ class Events: ObservableObject {
             if !granted {
                 fatalError("Cannot access events")
             }
-            self.populateEvents(date: self.date)
+            self.populateDayEvents(date: self.date)
+            self.populateWeekEvents(date: self.date)
         }
         NotificationCenter.default.publisher(for: .EKEventStoreChanged)
             .sink{ _ in
                 DispatchQueue.main.async {
-                    self.populateEvents(date: self.date)
+                    self.populateDayEvents(date: self.date)
+                    self.populateWeekEvents(date: self.date)
                 }
             }.store(in: &cancellables)
     }
     
-    private func populateEvents(date: Date){
+    private func populateDayEvents(date: Date){
         // Get the appropriate calendar.
         let calendar = Calendar.current
         
@@ -51,7 +55,25 @@ class Events: ObservableObject {
         let endOfDay = calendar.nextDate(after: date, matching: dateComponents, matchingPolicy: .nextTime)!
         
         let predicate = Events.eventStore.predicateForEvents(withStart: beginningOfDay, end: endOfDay, calendars: Events.eventStore.calendars(for: EKEntityType.event))
-        events = Events.eventStore.events(matching: predicate)
+        dayEvents = Events.eventStore.events(matching: predicate)
+        
+    }
+    
+    private func populateWeekEvents(date: Date){
+        // Get the appropriate calendar.
+        let calendar = Calendar.current
+        
+        var beginningOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .backward)?.end)?.addingTimeInterval(-86400)
+        var endOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .forward)?.end)!
+        if(calendar.isDateInWeekend(date)){
+            beginningOfWeek = date
+            // goes until one day before the exact next week date
+            endOfWeek = date.addingTimeInterval(518400)
+        }
+        
+        
+        let predicate = Events.eventStore.predicateForEvents(withStart: beginningOfWeek!, end: endOfWeek, calendars: Events.eventStore.calendars(for: EKEntityType.event))
+        weekEvents = Events.eventStore.events(matching: predicate)
         
     }
     
