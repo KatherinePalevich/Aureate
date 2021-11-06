@@ -63,12 +63,10 @@ class Events: ObservableObject {
         // Get the appropriate calendar.
         let calendar = Calendar.current
         
-        var beginningOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .backward)?.end)?.addingTimeInterval(-86400)
-        var endOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .forward)?.end)!
-        if(calendar.isDateInWeekend(date)){
-            beginningOfWeek = date
-            // goes until one day before the exact next week date
-            endOfWeek = date.addingTimeInterval(518400)
+        let beginningOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .backward)?.end)?.addingTimeInterval(-60 * 60 * 24)
+        var endOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .forward)?.end)!.addingTimeInterval(-60 * 60 * 24)
+        if(calendar.isDateInWeekend(date) && calendar.isDateInWeekend(date.addingTimeInterval(60 * 60 * 24))){
+            endOfWeek = date
         }
         
         
