@@ -22,7 +22,7 @@ class Reminders: ObservableObject {
             //populateWeekReminders(date: date)
         }
     }
-
+    
     public init(date: Date) {
         self.date = date
         Reminders.eventStore.requestAccess(to: EKEntityType.reminder){ (granted, error) in
@@ -43,34 +43,38 @@ class Reminders: ObservableObject {
     }
     
     private func populateDayReminders(date: Date){
-        let predicate: NSPredicate? = Reminders.eventStore.predicateForReminders(in: nil)
-        if let aPredicate = predicate {
-            Reminders.eventStore.fetchReminders(matching: aPredicate, completion: {(_ reminders: [Any]?) -> Void in
-                for reminder: EKReminder in reminders as? [EKReminder] ?? [EKReminder]() {
-                    // Do something for each reminder.
-                    // add all the active reminders
-                    if(!self.dayReminders.contains(reminder) && !reminder.isCompleted){
-                        self.dayReminders.append(reminder)
-                    }
-                }
-            })
-        }
+        let predicate = Reminders.eventStore.predicateForIncompleteReminders(withDueDateStarting: nil, ending: nil, calendars: Reminders.eventStore.calendars(for: EKEntityType.reminder))
+        Reminders.eventStore.fetchReminders(matching: predicate, completion: { (reminders: [EKReminder]?) -> Void in
+            self.dayReminders = reminders!
+        })
+        //        let predicate: NSPredicate? = Reminders.eventStore.predicateForReminders(in: nil)
+        //        if let aPredicate = predicate {
+        //            Reminders.eventStore.fetchReminders(matching: aPredicate, completion: {(_ reminders: [Any]?) -> Void in
+        //                for reminder: EKReminder in reminders as? [EKReminder] ?? [EKReminder]() {
+        //                    // Do something for each reminder.
+        //                    // add all the active reminders
+        //                    if(!self.dayReminders.contains(reminder) && !reminder.isCompleted){
+        //                        self.dayReminders.append(reminder)
+        //                    }
+        //                }
+        //            })
+        //        }
     }
     
-//    private func populateWeekReminders(date: Date){
-//        // Get the appropriate calendar.
-//        let calendar = Calendar.current
-//        
-//        let beginningOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .backward)?.end)?.addingTimeInterval(-60 * 60 * 24)
-//        var endOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .forward)?.end)!.addingTimeInterval(-60 * 60 * 24)
-//        if(calendar.isDateInWeekend(date) && calendar.isDateInWeekend(date.addingTimeInterval(60 * 60 * 24))){
-//            endOfWeek = date
-//        }
-//        
-//        
-//        let predicate = Events.eventStore.predicateForEvents(withStart: beginningOfWeek!, end: endOfWeek, calendars: Events.eventStore.calendars(for: EKEntityType.event))
-//        weekReminders = Events.eventStore.events(matching: predicate)
-//        
-//    }
+    //    private func populateWeekReminders(date: Date){
+    //        // Get the appropriate calendar.
+    //        let calendar = Calendar.current
+    //
+    //        let beginningOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .backward)?.end)?.addingTimeInterval(-60 * 60 * 24)
+    //        var endOfWeek = (calendar.nextWeekend(startingAfter: date, direction: .forward)?.end)!.addingTimeInterval(-60 * 60 * 24)
+    //        if(calendar.isDateInWeekend(date) && calendar.isDateInWeekend(date.addingTimeInterval(60 * 60 * 24))){
+    //            endOfWeek = date
+    //        }
+    //
+    //
+    //        let predicate = Events.eventStore.predicateForEvents(withStart: beginningOfWeek!, end: endOfWeek, calendars: Events.eventStore.calendars(for: EKEntityType.event))
+    //        weekReminders = Events.eventStore.events(matching: predicate)
+    //
+    //    }
     
 }

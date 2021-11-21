@@ -28,6 +28,8 @@ struct RemindersView : View {
                     selectedReminder = reminder
                 }
             }
+        }.sheet(item: $selectedReminder) { item in
+            ReminderViewer(reminder: item)
         }
     }
 }

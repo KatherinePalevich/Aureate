@@ -10,13 +10,15 @@
 		C9037B5B270233FC0002D4C1 /* JournalEntryCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9037B5A270233FC0002D4C1 /* JournalEntryCreationSheet.swift */; };
 		C951F5D227038844002B5848 /* Entry+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951F5D127038844002B5848 /* Entry+Helper.swift */; };
 		C95EC8D42724C6C70031E28A /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95EC8D32724C6C70031E28A /* EventViewer.swift */; };
-		C95EC8D62724FD1E0031E28A /* EKEvent+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95EC8D52724FD1E0031E28A /* EKEvent+Identifiable.swift */; };
 		C961B87E271DE34F0082C610 /* EventEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961B87D271DE34F0082C610 /* EventEditor.swift */; };
 		C968DC1B2707768E0069459D /* EntryEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968DC1A2707768E0069459D /* EntryEditor.swift */; };
 		C968DC1D270776E50069459D /* EntryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968DC1C270776E50069459D /* EntryForm.swift */; };
 		C968DC1F2708F3CB0069459D /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968DC1E2708F3CB0069459D /* EntryList.swift */; };
 		C99C95922712838A00D60A5F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99C95912712838A00D60A5F /* Events.swift */; };
 		C9D299C9273AEB6300814AA5 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D299C8273AEB6300814AA5 /* Reminders.swift */; };
+		C9D299CD2748264A00814AA5 /* ReminderEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D299CC2748264A00814AA5 /* ReminderEditor.swift */; };
+		C9D299CF2748278500814AA5 /* ReminderViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D299CE2748278500814AA5 /* ReminderViewer.swift */; };
+		C9D299D12749DB2700814AA5 /* EKCalendarItem+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D299D02749DB2700814AA5 /* EKCalendarItem+Identifiable.swift */; };
 		C9D30E1826F8F6F600F48077 /* AureateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D30E1726F8F6F600F48077 /* AureateApp.swift */; };
 		C9D30E1A26F8F6F600F48077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D30E1926F8F6F600F48077 /* ContentView.swift */; };
 		C9D30E1C26F8F6F700F48077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D30E1B26F8F6F700F48077 /* Assets.xcassets */; };
@@ -33,13 +35,15 @@
 		C9037B5A270233FC0002D4C1 /* JournalEntryCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCreationSheet.swift; sourceTree = "<group>"; };
 		C951F5D127038844002B5848 /* Entry+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+Helper.swift"; sourceTree = "<group>"; };
 		C95EC8D32724C6C70031E28A /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
-		C95EC8D52724FD1E0031E28A /* EKEvent+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEvent+Identifiable.swift"; sourceTree = "<group>"; };
 		C961B87D271DE34F0082C610 /* EventEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditor.swift; sourceTree = "<group>"; };
 		C968DC1A2707768E0069459D /* EntryEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryEditor.swift; sourceTree = "<group>"; };
 		C968DC1C270776E50069459D /* EntryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryForm.swift; sourceTree = "<group>"; };
 		C968DC1E2708F3CB0069459D /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
 		C99C95912712838A00D60A5F /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		C9D299C8273AEB6300814AA5 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
+		C9D299CC2748264A00814AA5 /* ReminderEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditor.swift; sourceTree = "<group>"; };
+		C9D299CE2748278500814AA5 /* ReminderViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewer.swift; sourceTree = "<group>"; };
+		C9D299D02749DB2700814AA5 /* EKCalendarItem+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKCalendarItem+Identifiable.swift"; sourceTree = "<group>"; };
 		C9D30E1426F8F6F600F48077 /* Aureate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aureate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D30E1726F8F6F600F48077 /* AureateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AureateApp.swift; sourceTree = "<group>"; };
 		C9D30E1926F8F6F600F48077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 				C951F5D127038844002B5848 /* Entry+Helper.swift */,
 				C99C95912712838A00D60A5F /* Events.swift */,
 				C9D299C8273AEB6300814AA5 /* Reminders.swift */,
-				C95EC8D52724FD1E0031E28A /* EKEvent+Identifiable.swift */,
+				C9D299D02749DB2700814AA5 /* EKCalendarItem+Identifiable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +131,8 @@
 				C961B87D271DE34F0082C610 /* EventEditor.swift */,
 				C95EC8D32724C6C70031E28A /* EventViewer.swift */,
 				C9EC8A0326FA512000973ADD /* ToDoView.swift */,
+				C9D299CC2748264A00814AA5 /* ReminderEditor.swift */,
+				C9D299CE2748278500814AA5 /* ReminderViewer.swift */,
 				C9EC8A0126FA511100973ADD /* HabitTrackerView.swift */,
 				C9EC8A0526FA512D00973ADD /* DreamTrackerView.swift */,
 			);
@@ -202,10 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D299CD2748264A00814AA5 /* ReminderEditor.swift in Sources */,
 				C9EC8A0626FA512D00973ADD /* DreamTrackerView.swift in Sources */,
 				C968DC1B2707768E0069459D /* EntryEditor.swift in Sources */,
 				C9037B5B270233FC0002D4C1 /* JournalEntryCreationSheet.swift in Sources */,
 				C9D299C9273AEB6300814AA5 /* Reminders.swift in Sources */,
+				C9D299D12749DB2700814AA5 /* EKCalendarItem+Identifiable.swift in Sources */,
 				C9D30E2126F8F6F700F48077 /* Persistence.swift in Sources */,
 				C9D30E1A26F8F6F600F48077 /* ContentView.swift in Sources */,
 				C95EC8D42724C6C70031E28A /* EventViewer.swift in Sources */,
@@ -215,11 +223,11 @@
 				C961B87E271DE34F0082C610 /* EventEditor.swift in Sources */,
 				C9D30E1826F8F6F600F48077 /* AureateApp.swift in Sources */,
 				C9D30E2426F8F6F700F48077 /* Aureate.xcdatamodeld in Sources */,
-				C95EC8D62724FD1E0031E28A /* EKEvent+Identifiable.swift in Sources */,
 				C968DC1F2708F3CB0069459D /* EntryList.swift in Sources */,
 				C9EC89FF26FA50EF00973ADD /* PlannerView.swift in Sources */,
 				C968DC1D270776E50069459D /* EntryForm.swift in Sources */,
 				C99C95922712838A00D60A5F /* Events.swift in Sources */,
+				C9D299CF2748278500814AA5 /* ReminderViewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
