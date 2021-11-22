@@ -47,18 +47,6 @@ class Reminders: ObservableObject {
         Reminders.eventStore.fetchReminders(matching: predicate, completion: { (reminders: [EKReminder]?) -> Void in
             self.dayReminders = reminders!
         })
-        //        let predicate: NSPredicate? = Reminders.eventStore.predicateForReminders(in: nil)
-        //        if let aPredicate = predicate {
-        //            Reminders.eventStore.fetchReminders(matching: aPredicate, completion: {(_ reminders: [Any]?) -> Void in
-        //                for reminder: EKReminder in reminders as? [EKReminder] ?? [EKReminder]() {
-        //                    // Do something for each reminder.
-        //                    // add all the active reminders
-        //                    if(!self.dayReminders.contains(reminder) && !reminder.isCompleted){
-        //                        self.dayReminders.append(reminder)
-        //                    }
-        //                }
-        //            })
-        //        }
     }
     
     //    private func populateWeekReminders(date: Date){

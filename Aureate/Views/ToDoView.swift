@@ -9,33 +9,28 @@ import SwiftUI
 import EventKit
 
 struct ToDoView: View {
-    @ObservedObject var calendar = Reminders(date: Date())
+    @ObservedObject var reminders = Reminders(date: Date())
     
     var body: some View {
-        Text("This is the To-Do Page")
-        RemindersView(calendarReminders: calendar.dayReminders)
+        RemindersView(reminders: reminders)
     }
 }
     
 struct RemindersView : View {
-    var calendarReminders : [EKReminder]
-    @State private var selectedReminder : EKReminder?
-    
+    @ObservedObject var reminders : Reminders
     var body: some View {
         List {
-            ForEach(calendarReminders, id: \.self) { reminder in
-                ReminderRow(reminder: reminder).onTapGesture {
-                    selectedReminder = reminder
+            ForEach($reminders.dayReminders, id: \.self) { $reminder in
+                NavigationLink(destination: ReminderViewer(reminder: $reminder)){
+                    ReminderRow(reminder: $reminder)
                 }
             }
-        }.sheet(item: $selectedReminder) { item in
-            ReminderViewer(reminder: item)
         }
     }
 }
 
 struct ReminderRow: View {
-    var reminder: EKReminder
+    @Binding var reminder: EKReminder
     
     var body: some View {
         VStack(alignment:.leading) {

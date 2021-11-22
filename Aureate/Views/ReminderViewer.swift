@@ -9,15 +9,23 @@ import SwiftUI
 import EventKit
 
 struct ReminderViewer: View {
-    var theReminder: EKReminder
-
-    init(reminder: EKReminder) {
-
-        theReminder = reminder
-
-    }
+    @Binding var reminder : EKReminder
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("Title", text: $reminder.title)
+            TextField("Notes", text: $reminder.notes ?? "")
+//            DatePicker(
+//                "Due  Date",
+//                selection: $reminder.dueDateComponents.date ?? Date(),
+//                displayedComponents: [.date]
+//            )
+//                .frame(maxWidth: .infinity)
+//                .datePickerStyle(.graphical)
+        }
+        .listStyle(GroupedListStyle())
+        .onDisappear {
+            try! Reminders.eventStore.save(reminder, commit: true)
+        }
     }
 }

@@ -92,14 +92,12 @@ struct DayView : View {
     var body: some View {
         List {
             ForEach(calendarEvents, id: \.self) { event in
-                
                 EventRow(event: event).onTapGesture {
                     selectedEvent = event
                 }
             }
         }.sheet(item: $selectedEvent) { item in
             EventViewer(event: item)
-            
         }
     }
     
