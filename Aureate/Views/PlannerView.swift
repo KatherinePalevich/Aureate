@@ -34,13 +34,13 @@ struct PlannerView: View {
                 }
         }.navigationBarItems(
             trailing: HStack {
-                newEntryButton
+                newEventButton
             }
         )
     }
     
     /// The button that presents the entry creation sheet.
-    private var newEntryButton: some View {
+    private var newEventButton: some View {
         Button(
             action: {
                 self.newEventIsPresented = true

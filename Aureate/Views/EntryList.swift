@@ -35,7 +35,7 @@ struct EntryList2: View {
     var body: some View {
         EntryList3(fetchRequest:fetchRequest, sortOrder: $sortOrder)
             .onReceive(didSave) {_ in
-                // CoreData doesn't automatically fetchf when relations change.
+                // CoreData doesn't automatically fetch when relations change.
                 if sortOrder == .byName {
                     // Toggle twice has the effect of forcing a new fetch request to be made.
                     sortOrder.toggle()
@@ -158,7 +158,7 @@ struct EntryList3: View {
         }
     }
     
-    /// The button that toggles between title/author ordering.
+    /// The button that toggles between name/last added ordering.
     private var toggleOrderingButton: some View {
         switch sortOrder {
         case .byName:

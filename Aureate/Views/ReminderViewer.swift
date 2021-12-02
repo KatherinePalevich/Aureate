@@ -10,21 +10,28 @@ import EventKit
 
 struct ReminderViewer: View {
     @Binding var reminder : EKReminder
+    @State var date = Date()
     
     var body: some View {
         Form {
-            TextField("Title", text: $reminder.title)
-            TextField("Notes", text: $reminder.notes ?? "")
-//            DatePicker(
-//                "Due  Date",
-//                selection: $reminder.dueDateComponents.date ?? Date(),
-//                displayedComponents: [.date]
-//            )
-//                .frame(maxWidth: .infinity)
-//                .datePickerStyle(.graphical)
+            Section {
+                TextField("Title", text: $reminder.title ?? "")
+                TextField("Notes", text: $reminder.notes ?? "")
+            }
+//            Section {
+//                DatePicker(
+//                            "Due  Date",
+//                            selection: $date,
+//                            displayedComponents: [.date]
+//                            )
+//                                .frame(maxWidth: .infinity)
+//                                .datePickerStyle(.graphical)
+//            }
         }
-        .listStyle(GroupedListStyle())
-        .onDisappear {
+    }
+    
+    private func save() {
+        do {
             try! Reminders.eventStore.save(reminder, commit: true)
         }
     }

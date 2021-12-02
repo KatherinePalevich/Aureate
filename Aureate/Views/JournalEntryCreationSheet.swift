@@ -8,13 +8,13 @@
 import CoreData
 import SwiftUI
 
-/// The Item creation sheet
+/// The entry creation sheet
 struct JournalEntryCreationSheet: View {
     let context: NSManagedObjectContext
     /// Manages editing of the new entry
     @ObservedObject var entry: Entry
 
-    /// Executed when user cancels or saves the new item.
+    /// Executed when user cancels or saves the new entry.
     let dismissAction: () -> Void
 
     @State private var errorAlertIsPresented = false

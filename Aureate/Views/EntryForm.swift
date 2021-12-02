@@ -8,10 +8,10 @@
 import SwiftUI
 import CoreData
 
-/// The Item editor form, embedded in both
+/// The entry editor form, embedded in both
 /// `ItemCreationSheet` and `ItemEditor`.
 struct EntryForm: View {
-    /// Manages the item form
+    /// Manages the entry form
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var entry: Entry
     @State private var showingImagePicker = false
