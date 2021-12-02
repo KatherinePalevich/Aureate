@@ -27,11 +27,7 @@ struct ReminderViewer: View {
 //                                .frame(maxWidth: .infinity)
 //                                .datePickerStyle(.graphical)
 //            }
-        }
-    }
-    
-    private func save() {
-        do {
+        }.onDisappear {
             try! Reminders.eventStore.save(reminder, commit: true)
         }
     }
