@@ -48,10 +48,5 @@ struct ReminderViewer: View {
                     .datePickerStyle(.graphical)
             }
         }
-        .onDisappear {
-            try! Reminders.eventStore.save(reminder, commit: true)
-            
-        }
-        
     }
 }
