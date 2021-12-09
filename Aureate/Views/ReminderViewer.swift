@@ -19,23 +19,24 @@ struct ReminderViewer: View {
     }
     
     var body: some View {
-        //Form {
+        Form {
+            Section {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "x.circle")
+                })
+                Button(action: {
+                    try! Reminders.eventStore.save(reminder, commit: true)
+                    dismiss()
+                }, label: {
+                    Text("Save")
+                })
+            }
             Section {
                 TextField("Title", text: $reminder.title ?? "")
-                TextField("Notes", text: $reminder.notes ?? "").toolbar {
-                        ToolbarItemGroup(placement: .navigationBarLeading){
-                            Button(action: {
-                                try! Reminders.eventStore.save(reminder, commit: true)
-                                }, label: {
-                                    Image(systemName: "arrowshape.turn.up.right.circle")
-                                })
-                            Button(action: {
-                                dismiss()
-                                }, label: {
-                                    Image(systemName: "x.circle")
-                                })
-                        }
-                }
+                TextField("Notes", text: $reminder.notes ?? "")
+                    
             }
             Section {
                 DatePicker(
@@ -46,10 +47,10 @@ struct ReminderViewer: View {
                     .frame(maxWidth: .infinity)
                     .datePickerStyle(.graphical)
             }
-        //}
-        .navigationBarTitle( "MAIN" )
+        }
         .onDisappear {
             try! Reminders.eventStore.save(reminder, commit: true)
+            
         }
         
     }
