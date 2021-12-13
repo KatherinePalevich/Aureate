@@ -106,14 +106,8 @@ struct EntryList3: View {
                 self.newEntryIsPresented = true
             },
             label: {
-                Label("Add Entry ", systemImage: "plus").imageScale(.medium)
+                Label("Add Entry ", systemImage: "plus.circle").imageScale(.large)
                     .padding(2.5)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .stroke(lineWidth: 2.0)
-                            .fill(Color.accentColor)
-                    )
-                
             })
             .sheet(
                 isPresented: $newEntryIsPresented,

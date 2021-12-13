@@ -29,13 +29,8 @@ struct ToDoView: View {
                 self.newReminderIsPresented = true
             },
             label: {
-                Label("Add Event ", systemImage: "plus").imageScale(.medium)
+                Label("Add Event ", systemImage: "plus.circle").imageScale(.large)
                     .padding(2.5)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .stroke(lineWidth: 2.0)
-                            .fill(Color.accentColor)
-                    )
                 
             })
             .sheet(
@@ -49,7 +44,7 @@ struct ToDoView: View {
         reminder.title = ""
         reminder.notes = ""
         reminder.calendar = Reminders.eventStore.defaultCalendarForNewReminders()
-        return ReminderViewer(reminder: $reminder)
+        return NavigationView{ReminderViewer(reminder: $reminder)}
     }
 }
 

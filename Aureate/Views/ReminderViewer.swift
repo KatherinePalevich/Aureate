@@ -20,24 +20,9 @@ struct ReminderViewer: View {
     
     var body: some View {
         Form {
-            Section {
-                Button(action: {
-                    dismiss()
-                }, label: {
-                    Image(systemName: "x.circle")
-                })
-                Button(action: {
-                    try! Reminders.eventStore.save(reminder, commit: true)
-                    dismiss()
-                }, label: {
-                    Text("Save")
-                })
-            }
-            Section {
                 TextField("Title", text: $reminder.title ?? "")
                 TextField("Notes", text: $reminder.notes ?? "")
                     
-            }
             Section {
                 DatePicker(
                     "Due  Date",
@@ -46,6 +31,23 @@ struct ReminderViewer: View {
                 )
                     .frame(maxWidth: .infinity)
                     .datePickerStyle(.graphical)
+                    .toolbar(){
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button(action: {
+                                dismiss()
+                            }, label: {
+                                Image(systemName: "x.circle")
+                            })
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(action: {
+                                try! Reminders.eventStore.save(reminder, commit: true)
+                                dismiss()
+                            }, label: {
+                                Text("Save")
+                            })
+                        }
+                    }
             }
         }
     }
