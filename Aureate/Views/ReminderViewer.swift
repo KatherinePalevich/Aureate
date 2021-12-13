@@ -20,34 +20,33 @@ struct ReminderViewer: View {
     
     var body: some View {
         Form {
-                TextField("Title", text: $reminder.title ?? "")
-                TextField("Notes", text: $reminder.notes ?? "")
-                    
-            Section {
-                DatePicker(
-                    "Due  Date",
-                    selection: $date,
-                    displayedComponents: [.date]
-                )
-                    .frame(maxWidth: .infinity)
-                    .datePickerStyle(.graphical)
-                    .toolbar(){
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button(action: {
-                                dismiss()
-                            }, label: {
-                                Image(systemName: "x.circle")
-                            })
-                        }
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button(action: {
-                                try! Reminders.eventStore.save(reminder, commit: true)
-                                dismiss()
-                            }, label: {
-                                Text("Save")
-                            })
-                        }
-                    }
+            TextField("Title", text: $reminder.title ?? "")
+            TextField("Notes", text: $reminder.notes ?? "")
+            
+//            Section {
+//                DatePicker(
+//                    "Due  Date",
+//                    selection: $date,
+//                    displayedComponents: [.date]
+//                )
+//                    .frame(maxWidth: .infinity)
+//                    .datePickerStyle(.graphical)
+//            }
+        }.toolbar(){
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "xmark.circle")
+                })
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    try! Reminders.eventStore.save(reminder, commit: true)
+                    dismiss()
+                }, label: {
+                    Text("Save")
+                })
             }
         }
     }
