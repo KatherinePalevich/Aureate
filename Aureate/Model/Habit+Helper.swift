@@ -1,14 +1,14 @@
 //
-//  Entry+Helper.swift
+//  Habit+Helper.swift
 //  Aureate
 //
-//  Created by Katherine Palevich on 9/28/21.
+//  Created by Katherine Palevich on 1/8/22.
 //
 
 import UIKit
 import Foundation
 
-extension Entry {
+extension Habit {
     
     var wrappedDate: Date {
         get {
@@ -30,14 +30,23 @@ extension Entry {
         }
     }
     
-    var wrappedText: String {
+    var wrappedDetails: String {
         get {
-            text ?? ""
+            details ?? ""
         }
         set(newValue) {
             objectWillChange.send()
-            text = newValue
+            details = newValue
         }
     }
     
+    var wrappedFrequency: Int32 {
+        get {
+            frequency
+        }
+        set(newValue) {
+            objectWillChange.send()
+            frequency = newValue
+        }
+    }
 }

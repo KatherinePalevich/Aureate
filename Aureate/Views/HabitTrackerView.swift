@@ -66,11 +66,11 @@ struct HabitTrackerView3: View {
     }
     
     /// Controls the presentation of the entry creation sheet.
-    @State private var newEntryIsPresented = false
+    @State private var newHabitIsPresented = false
     
     var body: some View {
         habitList
-            .navigationBarTitle(Text("\(habits.count) Entries"))
+            .navigationBarTitle(Text("\(habits.count) Habits"))
             .navigationBarItems(
                 leading: EditButton(),
                 trailing: HStack {
@@ -79,7 +79,7 @@ struct HabitTrackerView3: View {
                 })
     }
     
-    private var entryList: some View {
+    private var habitList: some View {
         List {
             ForEach(habits) { habit in
                 NavigationLink(destination: editorView(for: habit)) {
@@ -93,7 +93,7 @@ struct HabitTrackerView3: View {
     
     /// The view that edits a entry in the list.
     private func editorView(for habit: Habit) -> some View {
-        EntryEditor(
+        HabitEditor(
             context:viewContext,
             habit: habit)
             .navigationBarTitle(habit.wrappedName)
@@ -120,7 +120,7 @@ struct HabitTrackerView3: View {
         childContext.parent = viewContext
         return HabitCreationSheet(
             context:childContext,
-            entry: Habit(context: childContext),
+            habit: Habit(context: childContext),
             dismissAction: {
                 self.newHabitIsPresented = false
                 do {

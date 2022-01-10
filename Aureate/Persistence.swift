@@ -14,7 +14,7 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newEntry = Habit(context: viewContext)
+            let newEntry = Entry(context: viewContext)
             newEntry.timestamp = Date()
         }
         do {
