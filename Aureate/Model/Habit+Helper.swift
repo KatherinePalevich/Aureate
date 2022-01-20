@@ -49,4 +49,14 @@ extension Habit {
             frequency = newValue
         }
     }
+    
+    var wrappedDuration: Int32 {
+        get {
+            duration
+        }
+        set(newValue) {
+            objectWillChange.send()
+            duration = newValue
+        }
+    }
 }
