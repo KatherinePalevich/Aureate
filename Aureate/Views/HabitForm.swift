@@ -16,10 +16,9 @@ struct HabitForm: View {
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     private let pasteboard = UIPasteboard.general
     @State private var habitDayCountArray = ["7", "14", "30", "180", "365", "Other"]
-    @State private var habitSelected = "7"
+    @State private var habitSelected = "Other"
     @State private var habitOtherSelected = "Enter number of days"
 
-    //TO DO: reread onAppear and then think about how to save the other. So onDisappear maybe. WIll "other" remember 22 is the user goes back it.
     var body: some View {
         List {
             TextField("Name", text: $habit.wrappedName)
@@ -31,16 +30,25 @@ struct HabitForm: View {
                             Text($0)
                         }
                     }.pickerStyle(SegmentedPickerStyle())
-//                    .onChange(of: habitSelected) { newHabitSelection in
-//                        habit.wrappedDuration = Int32(newHabitSelection) ?? 0
-//                    }
+                    .onChange(of: habitSelected) { newHabitSelection in
+                        if(!newHabitSelection.contains("Other")) {
+                            habit.wrappedDuration = Int32(newHabitSelection) ?? 320
+                        } else {
+                            habitSelected = "Other"
+                            habit.wrappedDuration = Int32(habitOtherSelected) ?? 10
+                            print(habitOtherSelected)
+                        }
+                    }
                     TextField("Enter number of days", text: $habitOtherSelected)
                         .hidden(!habitSelected.isEqual("Other"))
+                        .onChange(of: habitOtherSelected){ value in
+                            habit.wrappedDuration = Int32(value) ?? 10
+                        }
                            
                     Text("days")
                 }
             }
-            Text("\(habit.wrappedDuration)")
+            //Text("\(habit.wrappedDuration)")
             Section(header: Text("Description")){
                 TextEditor(text: $habit.wrappedDetails)
             }
@@ -51,13 +59,6 @@ struct HabitForm: View {
             } else {
                 habitSelected = "Other"
                 habitOtherSelected = String(habit.wrappedDuration)
-            }
-        }
-        .onDisappear{
-            if(habitDayCountArray.contains(habitSelected) && !habitSelected.contains("Other")) {
-                habit.wrappedDuration = Int32(habitSelected) ?? 0
-            } else {
-                habit.wrappedDuration = Int32(habitOtherSelected) ?? 10
             }
         }
         .listStyle(GroupedListStyle())
