@@ -21,8 +21,12 @@ struct HabitForm: View {
 
     var body: some View {
         List {
-            TextField("Name", text: $habit.wrappedName)
-            
+            Section(header: Text("Name")){
+                TextField("Name", text: $habit.wrappedName)
+            }
+            Section(header: Text("Completed Days")){
+                Text("\(habit.wrappedCompletedNum)")
+            }
             Section(header: Text("Track habit for")) {
                 HStack{
                     Picker("Track habit for:", selection: $habitSelected){

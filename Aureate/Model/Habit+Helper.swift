@@ -59,4 +59,14 @@ extension Habit {
             duration = newValue
         }
     }
+    
+    var wrappedCompletedNum: Int32 {
+        get {
+            completedNum
+        }
+        set(newValue) {
+            objectWillChange.send()
+            completedNum = newValue
+        }
+    }
 }

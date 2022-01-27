@@ -28,6 +28,37 @@ struct HabitTrackerView: View {
     }
 }
 
+struct HabitList: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    var fetchRequest:FetchRequest<Habit>
+    
+    @Binding var sortOrder: SortOrder
+    
+    private var habits: FetchedResults<Habit> {
+        fetchRequest.wrappedValue
+    }
+    var body: some View {
+        List{
+            ForEach(habits){ habit in
+                HStack{
+                    Button(action:{
+                        habit.wrappedCompletedNum += 1
+                    }) {
+                        Image(systemName: "checkmark")
+                            .imageScale(.small)
+                    }
+                    Text("# Completed: \(habit.wrappedCompletedNum) |")
+
+                    Text(habit.wrappedName)
+                }
+                
+                    
+            }
+        }
+    }
+}
+
 struct HabitTrackerView2: View {
     @State private var sortOrder: SortOrder = .byName
     private var didSave = NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave)
@@ -65,18 +96,33 @@ struct HabitTrackerView3: View {
         fetchRequest.wrappedValue
     }
     
-    /// Controls the presentation of the entry creation sheet.
+    /// Controls the presentation of the habit creation sheet.
     @State private var newHabitIsPresented = false
     
     var body: some View {
-        habitList
-            .navigationBarTitle(Text("\(habits.count) Habits"))
-            .navigationBarItems(
-                leading: EditButton(),
-                trailing: HStack {
-                    newHabitButton
-                    toggleOrderingButton
-                })
+        TabView {
+            HabitList(fetchRequest:fetchRequest, sortOrder: $sortOrder).tabItem {
+                Label("Track Habits", systemImage: "checklist")
+            }
+            habitList
+                .navigationBarTitle(Text("\(habits.count) Habits"))
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing: HStack {
+                        newHabitButton
+                        toggleOrderingButton
+                    })
+                .tabItem {
+                    Label("All Habits", systemImage: "list.bullet")
+                }
+                
+        }.navigationBarItems(
+            trailing: HStack {
+                newHabitButton
+                //toggleOrderingButton
+            }
+        )
+        
     }
     
     private var habitList: some View {
@@ -91,7 +137,7 @@ struct HabitTrackerView3: View {
         .listStyle(PlainListStyle())
     }
     
-    /// The view that edits a entry in the list.
+    /// The view that edits a habit in the list.
     private func editorView(for habit: Habit) -> some View {
         HabitEditor(
             context:viewContext,
@@ -99,7 +145,7 @@ struct HabitTrackerView3: View {
             .navigationBarTitle(habit.wrappedName)
     }
     
-    /// The button that presents the entry creation sheet.
+    /// The button that presents the habit creation sheet.
     private var newHabitButton: some View {
         Button(
             action: {
@@ -114,7 +160,7 @@ struct HabitTrackerView3: View {
                 content: { self.newHabitCreationSheet })
     }
     
-    /// The entry creation sheet.
+    /// The habit creation sheet.
     private var newHabitCreationSheet: some View {
         let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         childContext.parent = viewContext
@@ -183,8 +229,6 @@ struct HabitRow: View {
     @ObservedObject var habit: Habit
     
     var body: some View {
-        VStack(alignment:.leading) {
-            Text(habit.wrappedName)
-        }
+        Text(habit.wrappedName)
     }
 }
