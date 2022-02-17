@@ -52,7 +52,6 @@ struct HabitForm: View {
                     Text("days")
                 }
             }
-            //Text("\(habit.wrappedDuration)")
             Section(header: Text("Description")){
                 TextEditor(text: $habit.wrappedDetails)
             }

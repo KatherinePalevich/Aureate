@@ -48,7 +48,7 @@ struct HabitList: View {
                         Image(systemName: "checkmark")
                             .imageScale(.small)
                     }
-                    Text("# Completed: \(habit.wrappedCompletedNum) |")
+                    Text("# Completed: \(habit.wrappedCompletedNum) / \(habit.wrappedDuration) days")
 
                     Text(habit.wrappedName)
                 }
