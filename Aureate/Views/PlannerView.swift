@@ -32,7 +32,11 @@ struct PlannerView: View {
                 .tabItem {
                     Label("Week", systemImage: "circle.hexagongrid")
                 }
-        }.navigationBarItems(
+        }.onAppear(){
+            calendar.populateDayEvents(date: Date())
+            calendar.populateWeekEvents(date: Date())
+        }
+        .navigationBarItems(
             trailing: HStack {
                 newEventButton
             }

@@ -30,8 +30,6 @@ class Events: ObservableObject {
             if !granted {
                 fatalError("Cannot access events")
             }
-            self.populateDayEvents(date: self.date)
-            self.populateWeekEvents(date: self.date)
         }
         NotificationCenter.default.publisher(for: .EKEventStoreChanged)
             .sink{ _ in
@@ -42,7 +40,7 @@ class Events: ObservableObject {
             }.store(in: &cancellables)
     }
     
-    private func populateDayEvents(date: Date){
+    public func populateDayEvents(date: Date){
         // Get the appropriate calendar.
         let calendar = Calendar.current
         
@@ -59,7 +57,7 @@ class Events: ObservableObject {
         
     }
     
-    private func populateWeekEvents(date: Date){
+    public func populateWeekEvents(date: Date){
         // Get the appropriate calendar.
         let calendar = Calendar.current
         
