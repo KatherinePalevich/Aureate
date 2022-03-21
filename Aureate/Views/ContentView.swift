@@ -69,15 +69,15 @@ struct MenuView: View {
                     .foregroundColor(.black)
                     .font(.headline)
             }
-            NavigationLink(destination: DreamTrackerView()) {
-                Image(systemName: "moon.stars")
-                    .foregroundColor(.black)
-                    .imageScale(.large)
-                Text("Dream Tracker")
-                    .foregroundColor(.black)
-                    .font(.headline)
-            }
-        }
+//            NavigationLink(destination: DreamTrackerView()) {
+//                Image(systemName: "moon.stars")
+//                    .foregroundColor(.black)
+//                    .imageScale(.large)
+//                Text("Dream Tracker")
+//                    .foregroundColor(.black)
+//                    .font(.headline)
+//            }
+        }.navigationTitle("❀ Menu")
     }
 }
 

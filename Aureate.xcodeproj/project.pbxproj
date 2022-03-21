@@ -146,10 +146,10 @@
 				C9D299CC2748264A00814AA5 /* ReminderEditor.swift */,
 				C9D299CE2748278500814AA5 /* ReminderViewer.swift */,
 				C9EC8A0126FA511100973ADD /* HabitTrackerView.swift */,
-				C9EC8A0526FA512D00973ADD /* DreamTrackerView.swift */,
 				C9731A99278AB6B200BBA55B /* HabitCreationSheet.swift */,
 				C9731A9B278AB70A00BBA55B /* HabitForm.swift */,
 				C9731A9D278AB76700BBA55B /* HabitEditor.swift */,
+				C9EC8A0526FA512D00973ADD /* DreamTrackerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
