@@ -11,15 +11,32 @@ import EventKit
 struct ToDoView: View {
     @ObservedObject var reminders = Reminders(date: Date())
     @State private var newReminderIsPresented = false
+    @State var reminder : EKReminder?
+    @State var newReminderTitle : String = ""
+    @State var newReminderNotes : String = ""
 
     
     var body: some View {
-        RemindersView(reminders: reminders)
-            .navigationBarItems(
-                trailing: HStack {
-                    newReminderButton
-                }
-            )
+        if reminders.accessGranted {
+            RemindersView(reminders: reminders)
+                .navigationBarItems(
+                    trailing: HStack {
+                        newReminderButton
+                    }
+                )
+        } else {
+            VStack(spacing: 8){
+                Image(systemName: "lock.fill")
+                    .font(.system(size: 100, weight: .medium))
+                Label("Aureate does not have access to your Reminders. \n Please go to Privacy Settings and allow access to use this feature!", systemImage: "heart")
+                    .font(.headline)
+                       .labelStyle(.titleOnly)
+                       .multilineTextAlignment(.center)
+                       .foregroundColor(Color.gray)
+            }
+            
+        }
+        
     }
     
     /// The button that presents the reminder creation sheet.
@@ -35,16 +52,32 @@ struct ToDoView: View {
             })
             .sheet(
                 isPresented: $newReminderIsPresented,
-                content: { self.newReminderCreationSheet })
+                onDismiss: {
+                    if !newReminderTitle.isEmpty || !newReminderNotes.isEmpty {
+                        let reminder = EKReminder(eventStore: Reminders.eventStore)
+                        reminder.title = newReminderTitle
+                        reminder.notes = newReminderNotes
+                        reminder.calendar = Reminders.eventStore.defaultCalendarForNewReminders()
+                        do {
+                            try Reminders.eventStore.save(reminder, commit: true)
+                        } catch {
+                            print("Cannot save")
+                            return
+                        }
+                    }
+                }, content: { self.newReminderCreationSheet })
     }
     
     /// The reminder creation sheet.
     private var newReminderCreationSheet: some View {
-        @State var reminder = EKReminder(eventStore: Reminders.eventStore)
-        reminder.title = ""
-        reminder.notes = ""
-        reminder.calendar = Reminders.eventStore.defaultCalendarForNewReminders()
-        return NavigationView{ReminderViewer(reminder: $reminder)}
+        return NavigationView{
+            NewReminderView(title: $newReminderTitle, notes: $newReminderNotes)
+                .toolbar {
+                    Button("Save"){
+                        newReminderIsPresented.toggle()
+                    }
+                }
+            }
     }
 }
 

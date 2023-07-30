@@ -27,9 +27,10 @@ class Events: ObservableObject {
     public init(date: Date) {
         self.date = date
         Events.eventStore.requestAccess(to: EKEntityType.event){ (granted, error) in
-            if !granted {
-                fatalError("Cannot access events")
-            }
+//            if !granted {
+//
+//                //fatalError("Cannot access events")
+//            }
         }
         NotificationCenter.default.publisher(for: .EKEventStoreChanged)
             .sink{ _ in

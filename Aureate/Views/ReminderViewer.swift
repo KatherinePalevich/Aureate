@@ -33,13 +33,6 @@ struct ReminderViewer: View {
 //                    .datePickerStyle(.graphical)
 //            }
         }.toolbar(){
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    dismiss()
-                }, label: {
-                    Image(systemName: "xmark.circle")
-                })
-            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
                     try! Reminders.eventStore.save(reminder, commit: true)

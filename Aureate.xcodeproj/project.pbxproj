@@ -18,6 +18,7 @@
 		C9731A9C278AB70A00BBA55B /* HabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9731A9B278AB70A00BBA55B /* HabitForm.swift */; };
 		C9731A9E278AB76700BBA55B /* HabitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9731A9D278AB76700BBA55B /* HabitEditor.swift */; };
 		C9731AA0278AB80100BBA55B /* Habit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9731A9F278AB80100BBA55B /* Habit+Helper.swift */; };
+		C993DE122A76F889006B7EAD /* NewReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993DE112A76F888006B7EAD /* NewReminderView.swift */; };
 		C99C95922712838A00D60A5F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99C95912712838A00D60A5F /* Events.swift */; };
 		C9D299C9273AEB6300814AA5 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D299C8273AEB6300814AA5 /* Reminders.swift */; };
 		C9D299CD2748264A00814AA5 /* ReminderEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D299CC2748264A00814AA5 /* ReminderEditor.swift */; };
@@ -48,6 +49,7 @@
 		C9731A9B278AB70A00BBA55B /* HabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitForm.swift; sourceTree = "<group>"; };
 		C9731A9D278AB76700BBA55B /* HabitEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEditor.swift; sourceTree = "<group>"; };
 		C9731A9F278AB80100BBA55B /* Habit+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+Helper.swift"; sourceTree = "<group>"; };
+		C993DE112A76F888006B7EAD /* NewReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderView.swift; sourceTree = "<group>"; };
 		C99C95912712838A00D60A5F /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		C9D299C8273AEB6300814AA5 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
 		C9D299CC2748264A00814AA5 /* ReminderEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditor.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				C961B87D271DE34F0082C610 /* EventEditor.swift */,
 				C95EC8D32724C6C70031E28A /* EventViewer.swift */,
 				C9EC8A0326FA512000973ADD /* ToDoView.swift */,
+				C993DE112A76F888006B7EAD /* NewReminderView.swift */,
 				C9D299CC2748264A00814AA5 /* ReminderEditor.swift */,
 				C9D299CE2748278500814AA5 /* ReminderViewer.swift */,
 				C9EC8A0126FA511100973ADD /* HabitTrackerView.swift */,
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9D299CD2748264A00814AA5 /* ReminderEditor.swift in Sources */,
+				C993DE122A76F889006B7EAD /* NewReminderView.swift in Sources */,
 				C9EC8A0626FA512D00973ADD /* DreamTrackerView.swift in Sources */,
 				C9D299D5274A02B000814AA5 /* Binding+Helper.swift in Sources */,
 				C9731AA0278AB80100BBA55B /* Habit+Helper.swift in Sources */,
@@ -377,7 +381,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aureate/Preview Content\"";
-				DEVELOPMENT_TEAM = 5SS4B9H8QQ;
+				DEVELOPMENT_TEAM = 9485HHLYPW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aureate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -385,7 +389,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.palevichchenindustries.Aureate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kpindustries.Aureate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,7 +403,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aureate/Preview Content\"";
-				DEVELOPMENT_TEAM = 5SS4B9H8QQ;
+				DEVELOPMENT_TEAM = 9485HHLYPW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aureate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -407,7 +411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.palevichchenindustries.Aureate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kpindustries.Aureate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

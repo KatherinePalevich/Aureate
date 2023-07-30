@@ -13,6 +13,7 @@ import SwiftUI
 class Reminders: ObservableObject {
     @Published public var dayReminders : [EKReminder] = []
     @Published public var weekReminders : [EKReminder] = []
+    @Published public var accessGranted : Bool = true
     private var cancellables = Set<AnyCancellable>()
     
     public static let eventStore = EKEventStore()
@@ -26,8 +27,12 @@ class Reminders: ObservableObject {
     public init(date: Date) {
         self.date = date
         Reminders.eventStore.requestAccess(to: EKEntityType.reminder){ (granted, error) in
+            if granted {
+                self.accessGranted = true
+            }
             if !granted {
-                fatalError("Cannot access events")
+                self.accessGranted = false
+                //fatalError("Cannot access events")
             }
             self.populateDayReminders(date: self.date)
             //self.populateWeekReminders(date: self.date)
