@@ -69,14 +69,19 @@ struct EntryList3: View {
     @State private var newEntryIsPresented = false
     
     var body: some View {
-        entryList
-            .navigationBarTitle(Text("\(entries.count) Entries"))
-            .navigationBarItems(
-                leading: EditButton(),
-                trailing: HStack {
-                    newEntryButton
-                    toggleOrderingButton
-                })
+        VStack{
+            Text("\(entries.count) Entries")
+                .font(.system(size: 36))
+                .bold()
+            entryList
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing: HStack {
+                        newEntryButton
+                        toggleOrderingButton
+                    })
+        }
+        
     }
     
     private var entryList: some View {
