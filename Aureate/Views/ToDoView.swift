@@ -43,6 +43,8 @@ struct ToDoView: View {
     private var newReminderButton: some View {
         Button(
             action: {
+                newReminderTitle = ""
+                newReminderNotes = ""
                 self.newReminderIsPresented = true
             },
             label: {
