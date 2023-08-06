@@ -17,7 +17,7 @@ struct HabitForm: View {
     private let pasteboard = UIPasteboard.general
     @State private var habitDayCountArray = ["7", "14", "30", "180", "365", "Other"]
     @State private var habitSelected = "Other"
-    @State private var habitOtherSelected = "Enter number of days"
+    @State private var habitOtherSelected = ""
 
     var body: some View {
         List {
@@ -46,7 +46,7 @@ struct HabitForm: View {
                     }
                     Text("days").fixedSize()
                 }
-                TextField("Enter number of days", text: $habitOtherSelected)
+                TextField("days", text: $habitOtherSelected, prompt: Text("Enter number of days"))
                     .hidden(!habitSelected.isEqual("Other"))
                     .onChange(of: habitOtherSelected){ value in
                         habit.wrappedDuration = Int32(value) ?? 10
@@ -61,7 +61,9 @@ struct HabitForm: View {
                 habitSelected = String(habit.wrappedDuration)
             } else {
                 habitSelected = "Other"
-                habitOtherSelected = String(habit.wrappedDuration)
+                if habit.duration != 0 {
+                    habitOtherSelected = String(habit.wrappedDuration)
+                }
             }
         }
         .listStyle(GroupedListStyle())
