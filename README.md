@@ -1,5 +1,5 @@
 # Aureate
-![App Icon](AureateIcon.JPG =200x)
+<img src="AureateIcon.JPG" width="200">
 
 Aureate is an iOS application I wrote for an Independent Studies Computer Science class. I enjoy maintaining an organized life and keeping track of tasks, whether they are big or small. I've learned that journaling, planning, and keeping track of tasks and habits is the key to a sound mind. Combined with my passion for programming, I created this app to share these tools with the world.
 
