@@ -28,7 +28,7 @@ struct ToDoView: View {
             VStack(spacing: 8){
                 Image(systemName: "lock.fill")
                     .font(.system(size: 100, weight: .medium))
-                Label("Aureate does not have access to your Reminders. \n Please go to Privacy Settings and allow access to use this feature!", systemImage: "heart")
+                Label("To display and edit your to-do list, Aureate requires access to your Reminders. \n Please go to Privacy Settings and allow access to use this feature!", systemImage: "heart")
                     .font(.headline)
                        .labelStyle(.titleOnly)
                        .multilineTextAlignment(.center)
@@ -75,9 +75,17 @@ struct ToDoView: View {
         return NavigationView{
             NewReminderView(title: $newReminderTitle, notes: $newReminderNotes)
                 .toolbar {
-                    Button("Save"){
-                        newReminderIsPresented.toggle()
+                    ToolbarItem(placement: .cancellationAction){
+                        Button("Cancel"){
+                            newReminderIsPresented.toggle()
+                        }
                     }
+                    ToolbarItem(placement: .confirmationAction){
+                        Button("Save"){
+                            newReminderIsPresented.toggle()
+                        }
+                    }
+                    
                 }
             }
     }

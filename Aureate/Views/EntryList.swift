@@ -139,7 +139,6 @@ struct EntryList3: View {
                 
             })
             .environment(\.managedObjectContext, childContext)
-            .accentColor(.blue)
     }
     
     private func deleteEntries(offsets: IndexSet) {

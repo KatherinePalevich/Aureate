@@ -180,7 +180,6 @@ struct HabitTrackerView3: View {
                 
             })
             .environment(\.managedObjectContext, childContext)
-            .accentColor(.blue)
     }
     
     private func deleteHabits(offsets: IndexSet) {

@@ -21,11 +21,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
-	<string>To display and update your calendar for each event.</string>
+	<string>To be able to display and edit your events, Aureate needs to access your calendar.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>To invite others to your calendar event.</string>
 	<key>NSRemindersUsageDescription</key>
-	<string>To display and update each reminder.</string>
+	<string>To be able to display and edit your tasks, Aureate needs to access your reminders.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

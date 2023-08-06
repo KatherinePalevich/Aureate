@@ -65,6 +65,7 @@ struct HabitForm: View {
             }
         }
         .listStyle(GroupedListStyle())
+        .tint(.accentColor)
     }
 
 }
