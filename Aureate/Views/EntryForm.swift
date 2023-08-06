@@ -21,7 +21,7 @@ struct EntryForm: View {
     var body: some View {
         List {
             TextField("Entry", text: $entry.wrappedName)
-            TextEditor(text: $entry.wrappedText)
+            TextEditor(text: $entry.wrappedText).frame(minHeight: 300)
         }
         .listStyle(GroupedListStyle())
     }
