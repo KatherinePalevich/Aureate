@@ -34,6 +34,7 @@ struct HabitForm: View {
                             Text($0)
                         }
                     }.pickerStyle(SegmentedPickerStyle())
+                    .frame(width: 262.0)
                     .onChange(of: habitSelected) { newHabitSelection in
                         if(!newHabitSelection.contains("Other")) {
                             habit.wrappedDuration = Int32(newHabitSelection) ?? 320
@@ -43,14 +44,13 @@ struct HabitForm: View {
                             print(habitOtherSelected)
                         }
                     }
-                    TextField("Enter number of days", text: $habitOtherSelected)
-                        .hidden(!habitSelected.isEqual("Other"))
-                        .onChange(of: habitOtherSelected){ value in
-                            habit.wrappedDuration = Int32(value) ?? 10
-                        }
-                           
-                    Text("days")
+                    Text("days").fixedSize()
                 }
+                TextField("Enter number of days", text: $habitOtherSelected)
+                    .hidden(!habitSelected.isEqual("Other"))
+                    .onChange(of: habitOtherSelected){ value in
+                        habit.wrappedDuration = Int32(value) ?? 10
+                    }
             }
             Section(header: Text("Description")){
                 TextEditor(text: $habit.wrappedDetails)

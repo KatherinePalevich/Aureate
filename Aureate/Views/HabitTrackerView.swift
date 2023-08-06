@@ -40,6 +40,9 @@ struct HabitList: View {
     }
     var body: some View {
         List{
+            if(habits.isEmpty){
+                Text("No habits to work on! Use the \"+\" in the upper right corner to add a new habit")
+            }
             ForEach(habits){ habit in
                 HStack{
                     Button(action:{
@@ -127,6 +130,9 @@ struct HabitTrackerView3: View {
     
     private var habitList: some View {
         List {
+            if(habits.isEmpty){
+                Text("No habits to work on! Use the \"+\" in the upper right corner to add a new habit")
+            }
             ForEach(habits) { habit in
                 NavigationLink(destination: editorView(for: habit)) {
                     HabitRow(habit: habit)
